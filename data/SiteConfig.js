@@ -4,7 +4,7 @@ module.exports = {
   siteTitleAlt: "Vagr9K's Blog", // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
   siteUrl: 'https://vagr9k.github.io', // Domain of your website without pathPrefix.
-  pathPrefix: '', // Prefixes all links. For cases when deployed to example.github.io/gatsby-material-starter/.
+  pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-material-starter/.
   siteDescription: 'My personal blog where I write about tech.', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
   siteFBAppID: '102660353705085', // FB Application ID for using app insights
@@ -12,10 +12,10 @@ module.exports = {
   disqusShortname: 'rubens-blog', // Disqus shortname.
   postDefaultCategoryID: 'Tech', // Default category for posts.
   userName: 'Ruben Harutyunyan', // Username to display in the author segment.
-  userTwitter: '@vagr9k', // Optionally renders "Follow Me" in the UserInfo segment.
-  userLocation: 'Yerevan, Armenia', // User location to display in the author segment.
+  userTwitter: 'vagr9k', // Optionally renders "Follow Me" in the UserInfo segment.
+  userLocation: '', // User location to display in the author segment.
   userAvatar: '/logos/logo-128.png', // User avatar to display in the author segment.
-  userDescription: "", // User description to display in the author segment.
+  userDescription: '', // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
