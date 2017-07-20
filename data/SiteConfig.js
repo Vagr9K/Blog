@@ -34,7 +34,7 @@ module.exports = {
       iconClassName: 'fa fa-envelope',
     },
   ],
-  copyright: 'Copyright © 2017. All rights reserverd.', // Copyright string for the footer of the website and RSS feed.
+  copyright: '© 2017 Ruben Harutyunyan. CC BY-NC 4.0', // Copyright string for the footer of the website and RSS feed.
 
 };
 
