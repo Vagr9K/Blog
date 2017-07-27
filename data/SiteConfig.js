@@ -5,7 +5,7 @@ module.exports = {
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://vagr9k.github.io", // Domain of your website without pathPrefix.
   pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-material-starter/.
-  siteDescription: "My personal blog where I write about tech.", // Website description used for RSS feeds/meta description tag.
+  siteDescription: "My personal blog where I write about life and technology.", // Website description used for RSS feeds/meta description tag.
   siteRss: "/rss.xml", // Path to the RSS file.
   siteFBAppID: "102660353705085", // FB Application ID for using app insights
   siteGATrackingID: "UA-47311644-6", // Tracking code ID for google analytics.
@@ -16,7 +16,7 @@ module.exports = {
   userLocation: "", // User location to display in the author segment.
   userAvatar: "/logos/avatar.png", // User avatar to display in the author segment.
   userDescription:
-    "I'm an enthusiastic software developer from Armenia. I am using modern technologies like ReactJS and NodeJS to create next generation applications.", // User description to display in the author segment.
+    "I'm an enthusiastic software developer from Armenia. Technology is my passion.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
@@ -31,7 +31,7 @@ module.exports = {
     },
     {
       label: "Email",
-      url: "mailto:vagr9k@gmail.com",
+      url: "mailto:harutyunyan.ruben@vagr9k.me",
       iconClassName: "fa fa-envelope"
     }
   ],
