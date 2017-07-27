@@ -9,7 +9,7 @@ tags:
     - aliases
 ---
 
-Typing the same long command everyday gets old way too fast. Especially if it's a macro that takes 3 lines on terminal screen to type. Thankfully, we have git aliases to save us.
+Typing the same long command everyday gets old way too fast. Especially if it's a macro that takes 3 lines on terminal screen to type. We are going to use Git aliases to fix that.
 
 ## How to set aliases
 
@@ -21,10 +21,8 @@ First of all, to actually set an alias, you have 2 options.
 
 2. Editing `.gitconfig`
 
-    You `.gitconfig` might look like this:
+    Your `.gitconfig` might look like this:
     ```ini
-    [color]
-    ui = true
     [alias]
     co = checkout
     ```
@@ -36,18 +34,18 @@ First of all, to actually set an alias, you have 2 options.
 
 ## Inspiration for aliases
 
-What are the most used commands in your case? Commit? Checkout? Then set them as aliases thet would make sense for you. In most cases that's the best way of doing so.
+What are the most used commands in your case? Commit? Checkout? Then set them as aliases. In most cases that's the best way of improving your workflow.
 
-But if you want something "futureproof", there are a couple of great sources for that.
+But if you want something "future proof", there are a couple of great resources for that.
 
 * [Prezto's Git aliases](https://github.com/sorin-ionescu/prezto/blob/master/modules/git/alias.zsh)
 
-    Probably the best organization of aliases. They are actually supposed to be used from shell, not as a git subcommand, but more on that later.
+    Probably the best organization of aliases. They are actually supposed to be used from the shell, not as a git subcommand, but more on that later.
 
 
 * [Git Aliases of the Gods! - Git Merge 2017](https://www.youtube.com/watch?v=3IIaOj1Lhb0)
 
-    This is a talk by a BitBucket developer Tim Pettersen. Some of his aliases didn't make into my list for complexity reasons, but if you are interested in serving your Git repository to the internet, you might want to check out the video at [11:32](https://youtu.be/3IIaOj1Lhb0?t=11m32s).
+    This is a talk by a BitBucket developer Tim Pettersen. Some of his aliases didn't make into my list for complexity reasons, but if you are interested in serving your local Git repository to the internet, you might want to check out the video at [11:32](https://youtu.be/3IIaOj1Lhb0?t=11m32s).
 
 
 * Your imagination
@@ -68,13 +66,13 @@ While creating your aliases you must consider multiple things:
 
 2. Creating way too many shell aliases will probably result in command name clashes.
 
-    For example `gs` which I use for `git status` will clash with GhostScript's executable. Fortunately for me, I pretty much never use GhostScript, so that's a loss I can live with.
+    For example `gs`, which I use for `git status` will clash with GhostScript's executable. Fortunately for me, I pretty much never use GhostScript, so that's a loss I can live with.
 
-    You can also source an executable by typing it's whole path to skip aliases, like `/usr/bin/gs`.
+    You can also source an executable by typing its whole path to skip aliases, like `/usr/bin/gs`.
 
 ## Actual aliases
 
-First of all, we are going to modify Prezto's aliases from shell to their respective Git versions.
+First of all, we are going to "translate" Prezto's aliases for the shell to their respective Git versions.
 
 During the conversion, we will lose `git submodule` and `git flow` aliases since they are using uppercase letters to differentiate from `git stash` and `git fetch`.
 
@@ -197,7 +195,7 @@ Then, we are going to add pretty looking logs based on [this stackoverflow answe
   l = !git l1
 ```
 
-Would be cool to have a snapshot of changes without doing commits, right?
+Would be cool to save a snapshot of changes without commiting changes, right?
 
 ```ini
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
@@ -257,6 +255,6 @@ Those aren't really aliases, but will probably be useful to you.
 
 ## But in the end...
 
-Those aliases might be an overkill for your use case. If you ever feel like you are wasting more time on "upgrading" your workflow instead of getting work done, consider stopping.
+Those aliases might be an overkill for your use case. If you ever feel like you are wasting more time on "upgrading" your workflow instead of getting actual work done, consider stopping.
 
-That being said, you can check out the full file in [my dotfiles repo](https://github.com/Vagr9K/dotfiles/blob/master/git/gitconfig).
+That being said, you can check out the full `.gitconfig` in [my dotfiles repo](https://github.com/Vagr9K/dotfiles/blob/master/git/gitconfig).
