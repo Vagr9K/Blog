@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavigationDrawer from "react-md/lib/NavigationDrawers";
 import ToolbarActions from "../ToolbarActions/ToolbarActions";
+import ToolbarTitle from "../ToolbarTitle/ToolbarTitle";
 import Footer from "../Footer/Footer";
 import GetNavList from "./NavList";
 import "./Navigation.scss";
@@ -12,7 +13,7 @@ class Navigation extends Component {
     return (
       <NavigationDrawer
         drawerTitle={config.siteTitle}
-        toolbarTitle={LocalTitle}
+        toolbarTitle={<ToolbarTitle />}
         contentClassName="main-content"
         navItems={GetNavList(config)}
         mobileDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
