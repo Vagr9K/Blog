@@ -20,6 +20,7 @@ class Navigation extends Component {
         tabletDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
         desktopDrawerType={NavigationDrawer.DrawerTypes.TEMPORARY}
         toolbarActions={<ToolbarActions config={config} />}
+        toolbarThemeType="themed"
       >
         <div className="main-container">
           {children}
