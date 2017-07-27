@@ -6,12 +6,12 @@ category: "web design"
 tags:
     - react
     - material design
-    - frameworks
+    - framework
 ---
 
 Decided to use Material Design in a React based app? Don't want to reinvent the ~~wheel~~ framework?
 
-It's time to choose a framework.
+It's time to make decisions.
 
 ## Contestants
 
@@ -33,7 +33,7 @@ NOTE: The [official reference implementation of Material Design](https://github.
 
 ## Popularity
 
-Poplarity doesn't necessarily show quality, but in reality of Open Source Software, projects that managed to get higher amount of traction are more likely to be maintained for a longer amount of time. Getting stuck with an abandonware is always a possible outcome, and we have to do everything to minimize it.
+Poplarity doesn't necessarily show quality, but in reality of Open Source Software, projects that managed to get higher amount of traction are more likely to be maintained for longer. Getting stuck with an abandonware is always a possible outcome, and we have to do everything to minimize it.
 
 | Project       | Stars | Forks
 |---------------|-------|------
