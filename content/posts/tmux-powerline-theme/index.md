@@ -83,3 +83,5 @@ set -g window-status-current-fg colour255
 ![screenshot](./theme-screenshot.png)
 
 [Full theme file](https://github.com/Vagr9K/dotfiles/blob/master/tmux/powerline.tmuxtheme).
+
+Feel free to check out my [Tmux tips and tricks](/tmux-tips-and-tricks)!

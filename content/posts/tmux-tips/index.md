@@ -9,9 +9,9 @@ tags:
     - tips and tricks
 ---
 
-I'm a really heavy tmux user. Mostly because of the way I launch and monitor dev servers/compilers/transpilers while developing.
+I'm a heavy tmux user. Mostly because of the way I launch and monitor my dev servers/compilers/transpilers while coding.
 
-Configureing Tmux in a right way for your needs is really important if you want to have a distraction free workflow.
+Configuring Tmux in a right way for your needs is really important if you want to have a distraction free workflow.
 
 ### Better Tmux prefix
 
@@ -69,7 +69,7 @@ set -g status-keys vi
 
 ### Mouse support
 
-You mostly shouldn't be using your mouse if you want to be *extra* productive, but sometimes scrolling with mouse is nice.
+You mostly shouldn't be using your mouse if you want to be *extra* productive, but sometimes using mouse wheel is nice.
 
 ```sh
 # Mouse support
@@ -99,7 +99,7 @@ set -g history-limit 10000
 
 ### Change pane/window counting index
 
-If you prefer keeping N0 pane/window for special purposes, this might come in handy.
+If you prefer keeping 0-index pane/window for special purposes, this might come in handy.
 
 ```sh
 # Start counting windows/panes from 1
@@ -109,7 +109,7 @@ setw -g pane-base-index 1
 
 ### Turn on the aggressive resize
 
-When using the same session on multiple screens, you'll be limited by the smallest screen resolution on *all* screens. This can be fixed by aggressive resize.
+When using the same session on multiple screens, you'll be limited by the smallest screen resolution on *all* screens. This can be mostly fixed by aggressive resize.
 
 ```sh
 setw -g aggressive-resize on
@@ -137,6 +137,13 @@ set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.dotfiles/tmux/plugins/'
 ##Init
 run '~/.dotfiles/tmux/plugins/tpm/tpm'
 ```
+## Themes
+
+I'm using a custom Powerline-like tmux theme I've made myself.
+
+![screenshot](./theme-screenshot.png)
+
+You can read more about that in [Creating a native Powerline theme for Tmux](/creating-a-native-powerline-theme-for-tmux).
 
 ## Is it worth investing time into this?
 
