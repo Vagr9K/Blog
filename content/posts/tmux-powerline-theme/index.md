@@ -9,11 +9,11 @@ tags:
     - powerline
 ---
 
-Many of you might have liked the appearance of powerline tmux theme, but the hassle of installing powerline and suffering possible performance degradation was not worth it.
+Many of you might have liked the appearance of [the Powerline](https://github.com/powerline/powerline) tmux theme, but the hassle of installing Powerline and suffering possible performance degradation was not worth it.
 
-In this article, I'm going to talk about theming Tmux to look like powerline.
+In this article, I'm going to talk about theming Tmux to look like Powerline.
 
-For those of you interested in the end result, [here is file](https://github.com/Vagr9K/dotfiles/blob/master/tmux/powerline.tmuxtheme).
+For those of you interested in the end result, [here is the theme file](https://github.com/Vagr9K/dotfiles/blob/master/tmux/powerline.tmuxtheme).
 
 Source it in your `tmux.conf`.
 
@@ -82,4 +82,4 @@ set -g window-status-current-fg colour255
 
 ![screenshot](./theme-screenshot.png)
 
-[Full file](https://github.com/Vagr9K/dotfiles/blob/master/tmux/powerline.tmuxtheme).
+[Full theme file](https://github.com/Vagr9K/dotfiles/blob/master/tmux/powerline.tmuxtheme).
