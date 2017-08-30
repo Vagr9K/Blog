@@ -6,4 +6,4 @@ Based on [Gatsby Material Starter](https://github.com/Vagr9K/gatsby-material-sta
 
 Uses [GatsbyJS](https://github.com/gatsbyjs/gatsby) for static website generation.
 
-[The blog itself.](vagr9k.me)
+[The blog itself.](https://vagr9k.me)
