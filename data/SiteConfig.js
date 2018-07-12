@@ -15,7 +15,7 @@ module.exports = {
   userTwitter: "vagr9k", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Yerevan, Armenia", // User location to display in the author segment.
   userAvatar: "/logos/avatar.png", // User avatar to display in the author segment.
-  dateFromFormat: "DD/MM/YYYY", // Date format used in the frontmatter.
+  dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
   dateFormat: "DD/MM/YYYY", // Date format for display.
   userDescription:
     "I'm an enthusiastic software developer from Armenia. Technology is my passion.", // User description to display in the author segment.
