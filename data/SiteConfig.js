@@ -1,6 +1,6 @@
 module.exports = {
-  blogPostDir: "posts", // The name of directory that contains your posts.
   siteTitle: "Ruben's Blog", // Site title.
+  siteTitleShort: "Ruben's Blog", // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: "Vagr9K's Blog", // Alternative site title for SEO.
   siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
   siteUrl: "https://vagr9k.me", // Domain of your website without pathPrefix.
@@ -15,6 +15,8 @@ module.exports = {
   userTwitter: "vagr9k", // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: "Yerevan, Armenia", // User location to display in the author segment.
   userAvatar: "/logos/avatar.png", // User avatar to display in the author segment.
+  dateFromFormat: "DD/MM/YYYY", // Date format used in the frontmatter.
+  dateFormat: "DD/MM/YYYY", // Date format for display.
   userDescription:
     "I'm an enthusiastic software developer from Armenia. Technology is my passion.", // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.

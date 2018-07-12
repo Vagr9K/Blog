@@ -22,9 +22,7 @@ class Navigation extends Component {
         toolbarActions={<ToolbarActions config={config} />}
         toolbarThemeType="themed"
       >
-        <div className="main-container">
-          {children}
-        </div>
+        <div className="main-container">{children}</div>
         <Footer userLinks={footerLinks} />
       </NavigationDrawer>
     );

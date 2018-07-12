@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import _ from "lodash";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import Chip from "react-md/lib/Chips";
 import "./PostTags.scss";
 
@@ -10,7 +10,7 @@ class PostTags extends Component {
     return (
       <div className="post-tag-container">
         {tags &&
-          tags.map(tag =>
+          tags.map(tag => (
             <Link
               key={tag}
               style={{ textDecoration: "none" }}
@@ -18,7 +18,7 @@ class PostTags extends Component {
             >
               <Chip label={tag} className="post-preview-tags" />
             </Link>
-          )}
+          ))}
       </div>
     );
   }

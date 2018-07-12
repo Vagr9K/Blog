@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FontIcon from "react-md/lib/FontIcons";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import "./PostSuggestions.scss";
 
 export default class PostSuggestions extends Component {
@@ -12,7 +12,7 @@ export default class PostSuggestions extends Component {
         <Link to={postFields.prevSlug} className="post-suggestion">
           <FontIcon
             forceFontSize
-            forceSize="64"
+            forceSize={64}
             className="secondary-color arrow-nav"
           >
             arrow_back
@@ -33,7 +33,7 @@ export default class PostSuggestions extends Component {
           </div>
           <FontIcon
             forceFontSize
-            forceSize="64"
+            forceSize={64}
             className="secondary-color arrow-nav"
           >
             arrow_forward

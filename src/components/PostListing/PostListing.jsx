@@ -10,7 +10,7 @@ class PostListing extends React.Component {
         tags: postEdge.node.frontmatter.tags,
         cover: postEdge.node.frontmatter.cover,
         title: postEdge.node.frontmatter.title,
-        date: postEdge.node.frontmatter.date,
+        date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
         timeToRead: postEdge.node.timeToRead
       });
@@ -22,9 +22,9 @@ class PostListing extends React.Component {
     return (
       <div className="md-grid md-grid--no-spacing md-cell--middle">
         <div className="md-grid md-cell--8 mobile-fix">
-          {postList.map(post =>
+          {postList.map(post => (
             <PostPreview key={post.title} postInfo={post} />
-          )}
+          ))}
         </div>
       </div>
     );

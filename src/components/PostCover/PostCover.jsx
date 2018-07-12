@@ -1,22 +1,59 @@
 import React, { Component } from "react";
-import "./PostCover.scss";
+import { StaticQuery, graphql } from "gatsby";
+import PostCover from "./PostCoverComponent";
 
-class PostCover extends Component {
+class queryWrapper extends Component {
   render() {
-    const { postNode, mobile } = this.props;
-    const post = postNode.frontmatter;
-    /* eslint no-undef: "off"*/
-    const cover = post.cover.startsWith("/")
-      ? __PATH_PREFIX__ + post.cover
-      : post.cover;
-    const coverHeight = mobile ? 180 : 350;
+    const { postNode, coverHeight, coverClassName } = this.props;
     return (
-      <div
-        style={{ backgroundImage: `url(${cover})`, height: `${coverHeight}px` }}
-        className="md-grid md-cell--9 post-cover"
+      <StaticQuery
+        query={graphql`
+          query CoverQuery {
+            allFile {
+              edges {
+                node {
+                  id
+                  absolutePath
+                  childImageSharp {
+                    id
+                    resolutions {
+                      base64
+                      tracedSVG
+                      aspectRatio
+                      width
+                      height
+                      src
+                      srcSet
+                      srcWebp
+                      srcSetWebp
+                      originalName
+                    }
+                    internal {
+                      contentDigest
+                      type
+                      owner
+                    }
+                    fluid(maxWidth: 1240) {
+                      ...GatsbyImageSharpFluid
+                      originalName
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => (
+          <PostCover
+            fileEdges={data.allFile.edges}
+            postNode={postNode}
+            coverHeight={coverHeight}
+            coverClassName={coverClassName}
+          />
+        )}
       />
     );
   }
 }
 
-export default PostCover;
+export default queryWrapper;
