@@ -184,13 +184,6 @@ We can clearly see that 2 worker threads are simply not enough to process everyt
 
 8 worker threads seem to be the sweet spot.
 
-## Unexpected issues
-
-During the benchmark I've discovered that with around 150-200 concurrent users talking, Porcupine starts to crash in `pv_mel_filter_bank_compute` due to `corrupted double-linked list`.
-This isn't always reproducible and I'm personally inclined to link it to a race condition. Adding more threads seemed to mitigate the issue.
-
-To be honest, at 150 concurrent talking users we will be far beyond the 2500 server limit imposed by Discord, at which sharding is enforced. At that point a separate instance of the application needs to be created making this a non-issue.
-
 ## Conclusion
 
 Voice command detection, even in its simplest form, is far from being easy. There are a lot of edge cases to consider and performance metrics to keep track of.
