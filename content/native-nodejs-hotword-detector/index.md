@@ -155,34 +155,45 @@ Based on the timers and buffer states of the `VoiceProcessor`, Opus decoding, ho
 
 The benchmark was executed as follows:
 
+- Average command text callback delay is measured
 - Prerecorded data is submitted
 - It's submitted instantly and assigned different IDs each time to simulate multiple concurrent users
-- Silence TTL is 1000ms, buffer TTL is 200ms, thus making the lowest possible callback time ~1400ms.
+- Silence TTL is 500ms, buffer TTL is 200ms, thus making the lowest possible callback time ~900ms
 - GCloud network requests are skipped due to inconsistency they introduce
-- Average callback delay is measured
-- User count configurations are 1/10/50/100/150/200/250
+- Concurrent user count configurations are 1/10/50/100/150/200/250/300/350/400/450/500
 - Worker thread configurations are 2th/4th/8th/16th
-- The benchmark was run on a Ryzen 1800x (stock, 3200Mhz CL14 RAM)
+- The benchmark was run on a Ryzen 1800x (8c/16th, stock, 3200Mhz CL14 RAM)
 
 Results:
 
-| Time/Count | 2th  | 4th  | 8th  | 16th |
-| ---------- | ---- | ---- | ---- | ---- |
-| 1          | 1390 | 1423 | 1425 | 1425 |
-| 10         | 1490 | 1446 | 1432 | 1434 |
-| 50         | 1978 | 1707 | 1584 | 1556 |
-| 100        | 2495 | 1970 | 1693 | 1620 |
-| 150        | 3351 | 2282 | 1888 | 1751 |
-| 200        | N/A  | 2544 | 1995 | 1854 |
-| 250        | N/A  | 2907 | 2134 | 1964 |
+| Time/Count | 32th        | 16th        | 8th         | 4th         | 2th         |
+| ---------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| 1          | 915         | 925.3333333 | 889.6666667 | 924         | 915.6666667 |
+| 10         | 927.9       | 922         | 950.5333333 | 904.5666667 | 958.5666667 |
+| 50         | 983.96      | 994         | 961.0266667 | 1140.52     | 1334.426667 |
+| 100        | 1035.42     | 984.8533333 | 1052.04     | 1381.716667 | 2151.346667 |
+| 150        | 1129.208889 | 1097.468889 | 1185.746667 | 1744.268889 | 3270.86     |
+| 200        | 1246.273333 | 1231.196667 | 1340.586667 | 2249.508333 | 4223.388333 |
+| 250        | 1370.210667 | 1205.458667 | 1608.093333 | 2750.345333 | 5197.790667 |
+| 300        | 1596.752222 | 1365.345556 | 1772.262222 | 3313.592222 | 6191.073333 |
+| 350        | 1475.487619 | 1566.992381 | 1944.973333 | 3838.128571 | 7174.192381 |
+| 400        | 1502.828333 | 1592.363333 | 2224.576667 | 4330.573333 | 8285.690833 |
+| 450        | 1745.642963 | 1816.846667 | 2516.979259 | 4854.128148 | 9094.977037 |
+| 500        | 1987.492667 | 2028.574667 | 2585.128    | 5258.944667 | 10008.06133 |
 
-Visualised:
+Visualized (callback response time is pictured in relation to concurrent users, lower is better):
 
 ![performance-graph](./threads.png)
 
-We can clearly see that 2 worker threads are simply not enough to process everything in time. Considering that most modern CPU's support 6+ logical cores, this shouldn't be an issue.
+As expected, 32 worker threads on a 16 logical core system perform the same as 16 workers.
 
-8 worker threads seem to be the sweet spot.
+There is a linear scaling with the worker count from 2 to 4, and from 4 to 8 workers.
+
+Jumping from 8 workers to 16 provides ~23% performance improvement, which is in line with the general expectations from AMD's SMT implementation.
+
+Overall, the nature of the task allowed proper parallelization to be implemented. This is close to a best case scenario when it comes to multithreading.
+
+It's also worth noting that Discord enforces sharding after your bot connects to 2500 servers. From my observations, it's highly unlikely that more than 100 people will be concurrently talking on those 2500 servers. As you can see from the <100 concurrent user tests, we have enough performance to run each shard's instance on a dual core CPU without any issues (ignoring NodeJS's own processing needs).
 
 ## Conclusion
 
